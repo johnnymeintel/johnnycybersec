@@ -155,11 +155,11 @@ Establishing a realistic enterprise environment with intentional security weakne
 
 | Phase       | Focus Area                | Timeline             | Complexity |
 | ----------- | ------------------------- | -------------------- | ---------- |
-| **Phase 1** | Infrastructure Foundation | Nov-Dec 2025         | ⭐⭐         |
-| **Phase 2** | Security Monitoring       | Dec <br>2025         | ⭐⭐⭐        |
-| **Phase 3** | Vulnerability Analysis    | Dec-Jan<br>2025-2026 | ⭐⭐⭐⭐       |
-| **Phase 4** | Offensive Operations      | Jan-Feb<br>2026      | ⭐⭐⭐⭐⭐      |
-| **Phase 5** | Advanced Operations       | Ongoing              | ⭐⭐⭐⭐⭐      |
+| **Phase 1** | Vulnerable Foundation     | Nov-Dec 2025         | ⭐⭐      |
+| **Phase 2** | SIEM Implementation       | Dec <br>2025         | ⭐⭐⭐    |
+| **Phase 3** | Red Team Attack Ops       | Dec-Jan<br>2025-2026 | ⭐⭐⭐⭐  |
+| **Phase 4** | Detect & Remediate        | Jan-Feb<br>2026      | ⭐⭐⭐⭐⭐ |
+| **Phase 5** | Purple Team / Advanced    | Ongoing              | ⭐⭐⭐⭐⭐  |
 
 
 ---
