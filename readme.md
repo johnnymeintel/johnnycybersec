@@ -118,20 +118,20 @@ Establishing a realistic enterprise environment with intentional security weakne
 ---
 
 
-#### 🔴 Phase 3: Vulnerable Infrastructure
+#### 🔴 Phase 3: Red Team Attack Ops
 
 **Understanding attack vectors through intentional misconfigurations**
 
 [under construction]
 
-**Value Proposition**: _Understand how systems get compromised and how to fix them_
+**Value Proposition**: _Understand how systems get compromised and how to prevent it from happening_
 
 ---
 
 
-#### 🔴 Phase 4: Attack Platform
+#### 🟣 Phase 4: Detect & Remediate
 
-**Offensive security operations and advanced attack techniques**
+**Remediate security misconfigurations, engineer detection**
 
 [under construction]
 
@@ -140,7 +140,7 @@ Establishing a realistic enterprise environment with intentional security weakne
 ---
 
 
-#### 🟣 Phase 5: Environment Expansion
+#### 🟣 Phase 5: Purple Team / Advanced 
 
 **Advanced purple team operations and strategic security development**
 
