@@ -1,10 +1,14 @@
 # 👋 Hi, I'm Johnny
 
+
 ## 🎯 Cybersecurity Analyst in Training
+
 
 The goal of this project is to build a comprehensive cybersecurity training environment that simulates a real enterprise network - complete with domain controller, executive/developer/user workstations, SIEM monitoring, and deliberately implemented vulnerabilities. It allows me to practice both attacking and defending systems using the same techniques that threat actors use in the wild, while mapping everything to the MITRE ATT&CK framework. This hands-on experience directly translates to the SOC analyst and cybersecurity roles I'm pursuing, because I'm not just reading about vulnerabilities - I'm actually exploiting them and then building the detection rules to catch them.
 
+
 ---
+
 
 ## About Me
 
@@ -23,9 +27,11 @@ The goal of this project is to build a comprehensive cybersecurity training envi
 	- Splunk Core Certified Power User
 	- TryHackMe SAL1
 
+
 ---
 
 ## Cybersecurity Analyst Homelab
+
 
 ### Infrastructure
 
@@ -33,6 +39,7 @@ The goal of this project is to build a comprehensive cybersecurity training envi
 - **Domain:** cjcs.local (Cookie Jar Cloud Solutions - fictional company)
 - **Network:** 192.168.56.0/24 (VirtualBox NAT Network) with pfSense gateway
 - **Monitoring:** Splunk Enterprise on SIEM01 with universal forwarders
+
 
 ### Virtual Machines
 
@@ -46,6 +53,7 @@ The goal of this project is to build a comprehensive cybersecurity training envi
 | 🙋<br>USER1   | Standard Workstation  | Windows 11 Pro      | Realistic user environment for attack simulations   |
 | ⚔️<br>KALI    | Attack Platform       | Kali Linux          | Penetration testing and red team operations         |
 
+
 ### 🛡️ Lab Development Timeline
 
 This homelab follows a 5-phase development approach, progressing from foundational infrastructure through advanced purple team operations. Each phase builds upon the previous, demonstrating both offensive and defensive cybersecurity capabilities.
@@ -56,7 +64,9 @@ Each phase represents **simultaneous development** across three dimensions:
 2. **📝 Content Creation**: Medium articles + GitHub repositories
 3. **🌐 Website Development**: Portfolio pages showcasing each phase
 
+
 ---
+
 
 #### 🔵 Phase 1: Vulnerable Foundation
 
@@ -96,6 +106,7 @@ Establishing a realistic enterprise environment with intentional security weakne
 
 ---
 
+
 #### 🔵 Phase 2: SIEM Implementation
 
 **Deploying comprehensive security monitoring and threat detection capabilities**
@@ -105,6 +116,7 @@ Establishing a realistic enterprise environment with intentional security weakne
 **Value Proposition**: _Monitor, detect, and analyze security threats_
 
 ---
+
 
 #### 🔴 Phase 3: Vulnerable Infrastructure
 
@@ -116,6 +128,7 @@ Establishing a realistic enterprise environment with intentional security weakne
 
 ---
 
+
 #### 🔴 Phase 4: Attack Platform
 
 **Offensive security operations and advanced attack techniques**
@@ -125,6 +138,7 @@ Establishing a realistic enterprise environment with intentional security weakne
 **Value Proposition**: _Think like an attacker to improve defenses_
 
 ---
+
 
 #### 🟣 Phase 5: Environment Expansion
 
@@ -136,6 +150,7 @@ Establishing a realistic enterprise environment with intentional security weakne
 
 ---
 
+
 #### 📊 Phase Progression Summary
 
 | Phase       | Focus Area                | Timeline             | Complexity |
@@ -146,7 +161,9 @@ Establishing a realistic enterprise environment with intentional security weakne
 | **Phase 4** | Offensive Operations      | Jan-Feb<br>2026      | ⭐⭐⭐⭐⭐      |
 | **Phase 5** | Advanced Operations       | Ongoing              | ⭐⭐⭐⭐⭐      |
 
+
 ---
+
 
 ## Let's Connect
 
@@ -156,7 +173,6 @@ Establishing a realistic enterprise environment with intentional security weakne
 - **Personal Website:** www.johnnymeintel.com (under construction)
 - **Blog:** www.medium.com/@johnnymeintel
 
----
 
 ## More About Me
 
@@ -171,7 +187,7 @@ Establishing a realistic enterprise environment with intentional security weakne
 - I play classical acoustic guitar.
 - I believe anything can be made into a quesadilla, cheeseburger, or sandwich. 
 
----
+
 
 *"The hope is that, in not too many years, human brains and computing machines will be coupled together very tightly, and that the resulting partnership will think as no human brain has ever thought and process data in a way not approached by the information-handling machines we know today."*
 
