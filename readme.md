@@ -65,8 +65,6 @@ Each phase represents **simultaneous development** across three dimensions:
 3. **🌐 Website Development**: Portfolio pages showcasing each phase
 
 
----
-
 
 #### 🔵 Phase 1: Vulnerable Foundation
 
