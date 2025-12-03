@@ -61,9 +61,6 @@ Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' `
 
 ![[Pasted image 20251203140802.png]]
 
-![[1.png]]
-
-
 ```powershell
 # PowerShell command to verify detailed errors enabled
 Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' `
