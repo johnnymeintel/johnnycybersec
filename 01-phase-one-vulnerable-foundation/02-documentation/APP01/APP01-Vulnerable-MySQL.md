@@ -75,7 +75,7 @@ These misconfigurations create detectable events:
 
 **Remote Access:**
 
-![[assets/APP01-Remote-Access-1.png]]
+![Alt text](assets/APP01-Remote-Access-1.png)
 
 **Create backdoor account:**
 
