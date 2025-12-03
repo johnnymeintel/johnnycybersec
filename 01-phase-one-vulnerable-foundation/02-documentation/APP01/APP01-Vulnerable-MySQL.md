@@ -73,11 +73,9 @@ These misconfigurations create detectable events:
 ### Root accessible from anywhere
 **MITRE ATT&CK:** T1078.001 (Valid Accounts: Default Accounts)
 
-![[Pasted image 20251203104739.png]]
-
 **Remote Access:**
 
-![[Pasted image 20251203105111.png]]
+![[APP01-Remote-Access-1.png]]
 
 **Create backdoor account:**
 
