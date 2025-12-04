@@ -4,7 +4,7 @@
 ## 🎯 Cybersecurity Analyst in Training
 
 
-The goal of this project is to build a comprehensive cybersecurity training environment that simulates a real enterprise network - complete with domain controller, executive/developer/user workstations, SIEM monitoring, and deliberately implemented vulnerabilities. It allows me to practice both attacking and defending systems using the same techniques that threat actors use in the wild, while mapping everything to the MITRE ATT&CK framework. This hands-on experience directly translates to the SOC analyst and cybersecurity roles I'm pursuing, because I'm not just reading about vulnerabilities - I'm actually exploiting them and then building the detection rules to catch them.
+The goal of this project is to build a comprehensive cybersecurity training environment that simulates a real enterprise network - complete with domain controller, executive/developer/user workstations, SIEM monitoring, and deliberately implemented vulnerabilities. It allows me to practice both attacking and defending systems using the same techniques that threat actors use in the wild, while mapping everything to the MITRE ATT&CK framework. 
 
 
 ---
@@ -72,7 +72,7 @@ Each phase represents **simultaneous development** across three dimensions:
 
 **Building a deliberately vulnerable AD domain and network infrastructure across multiple layers**
 
-Establishing a realistic enterprise environment with intentional security weaknesses that mirror common real-world misconfigurations. This isn't about building a "perfect" lab—it's about understanding how business pressures, legacy requirements, and operational convenience create the security gaps that attackers exploit. Each vulnerability is deliberately introduced with documentation explaining its business justification, why it exists in real enterprises, and how it enables specific attack paths.
+Establishing an enterprise environment with intentional security weaknesses that mirror common real-world misconfigurations. Each vulnerability is deliberately introduced with documentation explaining its business justification, why it exists in real enterprises, and how it enables specific attack paths.
 
 ##### Lab Components
 
@@ -85,22 +85,18 @@ Establishing a realistic enterprise environment with intentional security weakne
 ##### Tools & Technologies
 
 - Active Directory Domain Services
-- Windows Server administration
 - PowerShell scripting and automation
-- Network services (DNS/DHCP)
-- BloodHound
 - nmap
+- Wireshark
+- John the Ripper
+- Hydra
 
 #### Deliverables
 
 - **Medium Articles**:
-    - Domain Admin Auto-Logon: When Executive Convenience Becomes Critical Risk
-    - BloodHound Analysis: Why Most Enterprise AD Environments Have Attack Paths
-    - Service Account Security: The Enterprise Privilege Escalation Highway
+    - [under construction]
 - **GitHub Repositories**:
-    - `Executive-Workstation-Misconfiguration` - Domain Admin auto-logon on executive workstation, when business pressure overrides security policy
-    - `AD-Attack-Path-Analysis` - Mapping attack paths in a Server 2022/Windows 11 Lab Environment
-    - `Service-Account-Over-Privileging` - Service account with Domain Admin equivalent privileges
+    - [under construction]
 
 **Value Proposition**: _Understand how enterprises actually get compromised and identify realistic security gaps_
 
