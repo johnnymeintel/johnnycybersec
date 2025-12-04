@@ -1,4 +1,4 @@
-**Vulnerable IIS configuration:**
+## **Vulnerable IIS configuration:**
 
 ```powershell
 Import-Module WebAdministration
@@ -47,7 +47,6 @@ These misconfigurations create detectable events:
 ---
 
 ### Directory browsing and detailed error messages enabled
-**MITRE ATT&CK:** T1592 (Gather Victim Host Information)
 
 
 ```powershell
@@ -85,7 +84,6 @@ Get-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' `
 ---
 
 ### App Pool running as Domain Administrator
-**MITRE ATT&CK:** T1068 (Exploitation for Privilege Escalation)
 
 **Verify on APP01**
 
@@ -106,7 +104,6 @@ Confirms the pool is running as a **Custom Account** (`SpecificUser`) rather tha
 ---
 
 ### Weak permissions on wwwroot
-**MITRE ATT&CK:** T1574.002 (Hijack Execution Flow: DLL Side-Loading / Path Interception)
 
 **Verify on APP01**
 
@@ -117,3 +114,17 @@ icacls C:\inetpub\wwwroot
 ![APP01-Weak-Root](assets/APP01-Weak-Root.png)
 
 The `(F)` confirms the **Full Control** privilege.
+
+
+---
+
+## Impact
+
+- **Directory browsing enabled** = complete file structure exposed
+- **Detailed error messages** = server paths, versions, stack traces leaked
+- **Domain Admin app pool** = web vulnerability = domain compromise
+- **Everyone:Full Control** = any domain user uploads web shell
+- **Backup files served** = config files with credentials downloadable
+- **Web shell upload** = Domain Admin command execution
+- **Lateral movement** = APP01 as pivot to entire domain
+- **No authentication needed** = public web access = internal compromise

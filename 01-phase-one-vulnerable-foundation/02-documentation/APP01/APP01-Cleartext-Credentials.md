@@ -1,4 +1,4 @@
-**Cleartext credentials**
+## **Cleartext credentials**
 
 ```powershell
 # cleartext-credentials-app01.ps1
@@ -61,7 +61,6 @@ These misconfigurations create detectable events:
 ---
 
 ### Cleartext credentials
-**MITRE ATT&CK:** T1552 (Unsecured Credentials)
 
 **Verify on APP01:**
 
@@ -82,3 +81,18 @@ Get-Content C:\Scripts\deploy.bat
 ```
 
 ![APP01-Cleartext-2](assets/APP01-Cleartext-2.png)
+
+
+---
+
+## Impact
+
+- **web.config cleartext** = SQL Server credentials exposed
+- **config.php cleartext** = MySQL root access
+- **backup.bat cleartext** = SQL + Domain Admin credentials
+- **deploy.bat cleartext** = service account credentials
+- **Directory browsing** = all credential files publicly downloadable
+- **Database compromise** = all application data accessible
+- **Domain Admin credentials** = complete domain compromise
+- **Credential reuse** = test passwords across all systems
+- **No encryption** = passwords readable by anyone with file access

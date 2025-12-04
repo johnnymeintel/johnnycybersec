@@ -1,6 +1,3 @@
-# dangerous-group-memberships.ps1
-# Run on DC01 as Domain Admin
-
 Import-Module ActiveDirectory
 
 # 1. Service accounts → Domain Admins

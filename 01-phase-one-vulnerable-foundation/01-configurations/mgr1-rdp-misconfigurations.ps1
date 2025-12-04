@@ -1,6 +1,3 @@
-# rdp-misconfigurations.ps1
-# Fixed version – runs clean, no red errors
-
 # 1. Enable RDP
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
 
@@ -20,5 +17,3 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v Disab
 # 6. Disable RDP connection logging (fixed line)
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Audit" /v ProcessCreationIncludeCmdLine_Enabled /t REG_DWORD /d 0 /f
 wevtutil sl Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational /e:false
-
-Write-Host "`nRDP misconfigurations applied - MGR1 is now wide open" -ForegroundColor Red

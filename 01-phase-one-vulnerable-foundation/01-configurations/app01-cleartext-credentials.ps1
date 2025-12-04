@@ -1,6 +1,3 @@
-# cleartext-credentials-app01.ps1
-# Fixed – creates folder if missing
-
 $www = "C:\inetpub\wwwroot"
 
 # Create Scripts folder if it doesn't exist
@@ -33,7 +30,7 @@ sqlcmd -S DC01 -U svc-sql -P SqlPassword123! -Q "BACKUP DATABASE CJCS TO DISK='C
 echo Backup complete - marcus_chen:Executive2024! >> C:\backup-log.txt
 "@ | Out-File "$www\backup.bat" -Encoding ASCII
 
-# deploy.bat with service account (now works)
+# deploy.bat with service account
 @"
 rem svc-app:AppPassword123! - do not delete
 net use \\DC01\c$ /user:cjcs\svc-app AppPassword123!

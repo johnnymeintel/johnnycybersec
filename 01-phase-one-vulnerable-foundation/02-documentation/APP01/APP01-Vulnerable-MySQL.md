@@ -71,7 +71,6 @@ These misconfigurations create detectable events:
 ---
 
 ### Root accessible remotely
-**MITRE ATT&CK:** T1078.001 (Valid Accounts: Default Accounts)
 
 **Verify on APP01:**
 
@@ -94,7 +93,6 @@ GRANT ALL PRIVILEGES ON *.* TO 'backdoor'@'%' WITH GRANT OPTION;
 ---
 
 ### Service account with root privileges
-**MITRE ATT&CK:** T1078.003 (Valid Accounts: Local Accounts), T1552.001 (Credentials in Files)
 
 ```bash
 SHOW GRANTS FOR 'svc-sql'@'%' \G
@@ -109,7 +107,6 @@ SHOW GRANTS FOR 'svc-sql'@'%' \G
 ---
 
 ### MySQL bound to ALL network interfaces
-**MITRE ATT&CK:** T1210 (Exploitation of Remote Services)
 
 ```powershell
 # View the vulnerable configuration
@@ -150,8 +147,6 @@ nmap -p 3306 --script=mysql-info,mysql-enum 192.168.56.4
 
 ---
 ### Weak password
-**MITRE ATT&CK:** T1110.001 (Brute Force: Password Guessing), T1110.002 (Brute Force: Password Cracking)
-
 
 **Credential brute force:**
 
@@ -196,7 +191,6 @@ john --format=mysql-sha1 --wordlist=/usr/share/wordlists/mysql.txt mysql_hashes.
 ---
 
 ### SSL certificate verification disabled
-**MITRE ATT&CK:** T1557 (Adversary-in-the-Middle), T1040 (Network Sniffing)
 
 ```bash
 # Verify on APP01
@@ -234,3 +228,19 @@ tcpdump -i eth1 -w mysql_capture.pcap 'port 3306'
 
 
 ![APP01-TCP-2](assets/APP01-TCP-2.png)
+
+
+---
+
+## Impact
+
+- **Root accessible remotely** = god-mode MySQL access from network
+- **No authentication restrictions** = root@'%' accepts any host
+- **All privileges granted** = read/write all databases
+- **svc-sql full privileges** = domain service account with MySQL admin
+- **File system access** = LOAD_FILE() reads any file
+- **File write capability** = INTO OUTFILE writes web shells
+- **Database dumping** = exfiltrate all application data
+- **Backdoor MySQL users** = persistent database access
+- **No SSL required** = credentials transmitted cleartext
+- **Bind to 0.0.0.0** = MySQL accessible from entire network

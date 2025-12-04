@@ -1,7 +1,3 @@
-# weak-service-accounts.ps1
-# Phase 1 – Vulnerable Service Accounts
-# Run on DC01 as Domain Admin
-
 Import-Module ActiveDirectory
 
 # svc-sql
@@ -20,7 +16,3 @@ setspn -A "HTTP/app01.cjcs.local:80" "svc-app"
 New-ADUser -Name "svc-generic" -SamAccountName "svc-generic" -UserPrincipalName "svc-generic@cjcs.local" -Description "Generic test account - no DA" -AccountPassword (ConvertTo-SecureString "ServicePassword123!" -AsPlainText -Force) -Enabled $true -PasswordNeverExpires $true
 Set-ADAccountControl "svc-generic" -DoesNotRequirePreAuth $true
 setspn -A "CIFS/dc01.cjcs.local" "svc-generic"
-
-Write-Host "`nPhase 1 vulnerable service accounts created!" -ForegroundColor Green
-Write-Host "svc-sql and svc-app = Domain Admins + Kerberoastable + AS-REP roastable" -ForegroundColor Yellow
-Write-Host "svc-generic = Kerberoastable + AS-REP roastable (no DA)" -ForegroundColor Yellow

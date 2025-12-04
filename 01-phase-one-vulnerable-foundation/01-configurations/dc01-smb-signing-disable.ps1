@@ -1,6 +1,3 @@
-# smb-signing-disable.ps1
-# DC01 – turns off every signing/encryption protection (classic real-world misconfig)
-
 # 1. Disable SMB client signing (always)
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" /v RequireSecuritySignature /t REG_DWORD /d 0 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" /v EnableSecuritySignature /t REG_DWORD /d 0 /f
@@ -22,6 +19,3 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0" /v NtlmMinServerSec /
 
 # 6. Force Group Policy update on the DC
 gpupdate /force
-
-Write-Host "`nSMB signing, encryption, LDAP signing, and NTLM restrictions DISABLED" -ForegroundColor Red
-Write-Host "DC01 is now perfect for NTLM relay, Responder, and Kerberoasting" -ForegroundColor Yellow
