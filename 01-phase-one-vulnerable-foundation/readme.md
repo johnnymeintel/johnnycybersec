@@ -10,6 +10,43 @@ Phase 1 establishes an Active Directory environment mirroring real-world enterpr
 
 **Key Principle**: Vulnerabilities exist not because administrators are incompetent, but because businesses prioritize operational continuity over security best practices.
 
+### Just How Vulnerable?
+
+#### **APP01 Vulnerabilities**
+
+- Directory browsing enabled - complete file structure exposed
+- Detailed error messages - server paths and versions leaked
+- Domain Admin application pool - web exploit = domain compromise
+- Everyone:Full Control on wwwroot - anyone can upload web shells
+- Backup files (.bak) served - config files publicly downloadable
+- web.config cleartext credentials - SQL Server access
+- config.php cleartext credentials - MySQL root access
+- backup.bat cleartext credentials - SQL + Domain Admin passwords
+- deploy.bat cleartext credentials - service account password
+
+#### **DC01 Vulnerabilities**
+
+- SMB signing disabled - NTLM relay attacks possible
+- LDAP signing disabled - man-in-the-middle attacks
+- NTLMv1 allowed - weak, crackable authentication
+- Weak password policy - 6 char minimum, no complexity, no lockout
+- Reversible encryption enabled - cleartext passwords in LSASS
+- Service accounts with SPNs - Kerberoastable
+- Service accounts without pre-auth - AS-REP roastable
+- Service accounts as Domain Admins - single compromise = full domain
+- IT Support group has DCSync rights - steal all credentials
+
+#### **MGR1 Vulnerabilities**
+
+- Domain Admin auto-logon - automatic DA login on boot
+- DA password in registry cleartext - readable by anyone
+- RDP enabled with NLA disabled - easier brute force
+- RDP from any IP - entire network can connect
+- Unlimited RDP sessions - multiple concurrent connections
+- RDP logging disabled - no forensic evidence
+- Windows Firewall disabled - all ports accessible
+- UAC disabled - silent privilege escalation
+- Event logging disabled - complete blind spot for SOC
 
 ---
 
