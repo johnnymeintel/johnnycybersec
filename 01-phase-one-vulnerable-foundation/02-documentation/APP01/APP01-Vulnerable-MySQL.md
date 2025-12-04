@@ -1,4 +1,4 @@
-**Vulnerable MySQL configuration:**
+## **Vulnerable MySQL configuration:**
 
 ```bash
 # Create root user that can authenticate from ANY host
@@ -78,6 +78,7 @@ These misconfigurations create detectable events:
 ![APP01-Remote-Access-1](assets/APP01-Remote-Access-1.png)
 
 **KALI root access:**
+
 ![APP01-Remote-Access-2](assets/APP01-Remote-Access-2.png)
 
 **KALI creates backdoor:**
