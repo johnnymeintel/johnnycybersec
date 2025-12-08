@@ -22,12 +22,3 @@ Write-Host "[+] Applied Weak-Lab-PSO to svc-sql, svc-app, svc-generic" -Foregrou
 
 # Also apply to regular users
 Add-ADFineGrainedPasswordPolicySubject "Weak-Lab-PSO" -Subjects "Domain Users"
-
-Write-Host "[+] Applied Weak-Lab-PSO to all Domain Users (because legacy apps, bro)" -ForegroundColor Yellow
-
-Write-Host "`nPassword Policy now:" -ForegroundColor Cyan
-Write-Host "Min length: 7 chars" -ForegroundColor Cyan
-Write-Host "Complexity: OFF" -ForegroundColor Cyan
-Write-Host "Lockout: Never" -ForegroundColor Cyan
-Write-Host "History: 1 password remembered" -ForegroundColor Cyan
-Write-Host "Reversible encryption: ENABLED (cleartext in LSASS!)" -ForegroundColor Red
