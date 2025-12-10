@@ -1,6 +1,6 @@
 # Phase One - Vulnerable Foundation
 
-> **Learning Focus**: Assess deliberately vulnerable Windows AD domain with realistic enterprise misconfigurations
+> **Learning Focus**: Assess a deliberately vulnerable Windows AD domain with realistic enterprise misconfigurations
 
 ---
 
@@ -53,48 +53,71 @@ Phase 1 establishes an Active Directory environment mirroring real-world enterpr
 ## **Repository Structure**
 
 ```
-phase-one/
-├── README.md
+01-phase-one-vulnerable-foundation/
+├── readme.md [cite: 5]
+├── phaseonedirectory.txt [cite: 4]
 │
-├── docs/
-│   ├── APP01-CRED-01-webconfig-SQL-cleartext.md
-│   ├── APP01-CRED-02-config-php-MySQL-root.md
-│   ├── APP01-CRED-03-backup-bat-DA-credentials.md
-│   ├── APP01-CRED-04-deploy-bat-service-account.md
-│   ├── APP01-IIS-01-Directory-Browsing.md
-│   ├── APP01-IIS-02-Domain-Admin-AppPool.md
-│   ├── APP01-IIS-03-Everyone-Full-Control.md
-│   ├── APP01-IIS-04-Bak-Files-Served.md
-│   ├── DC01-Dangerous-Group-Memberships.md
-│   ├── DC01-SMB-Signing-Disabled.md
-│   ├── DC01-Weak-Password-Policy.md
-│   ├── DC01-Weak-Service-Accounts.md
-│   ├── MGR1-Domain-Admin-Autologon.md
-│   ├── MGR1-RDP-Misconfigurations.md
-│   └── MGR1-Security-Controls-Disabled.md
+├── 00-deployment/ [cite: 2]
+│   ├── APP01-Baseline-Assessment-Quick.ps1 [cite: 7]
+│   ├── DC01-Baseline-Assessment-Quick.ps1 [cite: 7]
+│   ├── MGR1-Domain.ps1 [cite: 7]
+│   ├── MGR1-Networking.ps1 [cite: 8]
+│   ├── MGR1-Security.ps1 [cite: 8]
+│   ├── MGR1-Services-Processes-Software.ps1 [cite: 9]
+│   ├── MGR1-Sysinfo.ps1 [cite: 9]
+│   └── MGR1-User-Specific-Artifacts.ps1 [cite: 9]
 │
-└── scripts/
-    ├── app01-iis-misconfigurations.ps1
-    ├── app01-cleartext-credentials.ps1
-    ├── app01-mysql-misconfigurations.sh
-    ├── dc01-smb-signing-disable.ps1
-    ├── dc01-weak-password-policy.ps1
-    ├── dc01-weak-service-accounts.ps1
-    ├── dc01-dangerous-group-memberships.ps1
-    ├── mgr1-domain-admin-autologon.ps1
-    ├── mgr1-rdp-misconfigurations.ps1
-    └── mgr1-disable-security-controls.ps1
+├── 01-configurations/ [cite: 3]
+│   ├── app01-cleartext-credentials.ps1 [cite: 11]
+│   ├── app01-iis-misconfigurations.ps1 [cite: 12]
+│   ├── app01-mysql-misconfigurations.sh [cite: 12]
+│   ├── dc01-dangerous-group-memberships.ps1 [cite: 12]
+│   ├── dc01-smb-signing-disable.ps1 [cite: 13]
+│   ├── dc01-weak-password-policy.ps1 [cite: 13]
+│   ├── dc01-weak-service-accounts.ps1 [cite: 13]
+│   ├── mgr1-disable-security-controls.ps1 [cite: 14]
+│   ├── mgr1-domain-admin-autologon.ps1 [cite: 14]
+│   └── mgr1-rdp-misconfigurations.ps1 [cite: 14]
+│
+├── 02-documentation/ [cite: 3]
+│   ├── APP01.md [cite: 17]
+│   ├── DC01.md [cite: 17]
+│   ├── MGR1.md [cite: 18]
+│   │
+│   └── assets/ [cite: 19]
+│       ├── APP01-All-Network-2.png [cite: 20]
+│       ├── APP01-Backdoor-1.png [cite: 22]
+│       ├── APP01-Cleartext-1.png [cite: 22]
+│       ├── APP01-Curl-IIS.png [cite: 23]
+│       ├── APP01-Hydra.png [cite: 25]
+│       ├── APP01-Remote-Access-1.png [cite: 26]
+│       ├── APP01-Service-Root-1.png [cite: 27]
+│       ├── APP01-SSL-Disabled-1.png [cite: 28]
+│       ├── APP01-TCP-1.png [cite: 29]
+│       ├── APP01-Weak-Root.png [cite: 31]
+│       ├── DC01-Excessive-Domain-1.png [cite: 31]
+│       ├── DC01-SMB-Disabled-1.png [cite: 32]
+│       ├── DC01-Weak-Passwords-1.png [cite: 32]
+│       ├── DC01-Weak-Service-1.png [cite: 33]
+│       ├── MGR1-Autologon-1.png [cite: 34]
+│       ├── MGR1-Disabled-Security-1.png [cite: 34]
+│       ├── MGR1-RDP-1.png [cite: 35]
+│       └── MySQL-Cheat-Sheet-1.md [cite: 36]
+│       (Note: Truncated full asset list for readability)
+│
+└── 03-resources/ [cite: 4]
+    └── phase-one-external-references.md [cite: 38]
 ```
 
 ---
 
 ## **Key Milestones**
 
-| Milestone                  | Status      | Details                                          |
-| -------------------------- | ----------- | ------------------------------------------------ |
-| ✅ Domain Infrastructure    | Complete    | cjcs.local forest, DNS, organizational structure |
-| ✅ Vulnerable Configuration | Complete    | 15 documented misconfigurations across 3 VMs     |
-| 🔄 Attack Validation       | In Progress | Testing exploitation paths from Kali             |
+| Milestone                  | Status   | Details                                               |
+| -------------------------- | -------- | ----------------------------------------------------- |
+| ✅ Domain Infrastructure    | Complete | cjcs.local forest, DNS, organizational structure      |
+| ✅ Vulnerable Configuration | Complete | documented misconfigurations across 3 VMs             |
+| ✅ Attack Validation        | Complete | Testing exploitations via local command line and Kali |
 
 
 ---
@@ -122,13 +145,12 @@ phase-one/
 
 ## **Related Content**
 
-### **Technical Articles** (In Development)
+### **Technical Articles**
 
-- 
+- [Medium](https://medium.com/@johnnymeintel/list/vulnerable-infrastructure-251fa541c5ba)
 
 ### **External Resources**
 
-- [BloodHound Documentation](https://bloodhound.readthedocs.io/en/latest/)
 - [SwiftOnSecurity Sysmon Config](https://github.com/SwiftOnSecurity/sysmon-config)
 - [Microsoft AD Security Best Practices](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices)
 - [MITRE ATT&CK Framework](https://attack.mitre.org/)

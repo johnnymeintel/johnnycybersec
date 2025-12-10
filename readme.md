@@ -94,9 +94,9 @@ Establishing an enterprise environment with intentional security weaknesses that
 #### Deliverables
 
 - **Medium Articles**:
-    - [under construction]
+    - [Medium](https://medium.com/@johnnymeintel/list/vulnerable-infrastructure-251fa541c5ba)
 - **GitHub Repositories**:
-    - [under construction]
+    - [GitHub](https://github.com/johnnymeintel/johnnycybersec/tree/main/01-phase-one-vulnerable-foundation)
 
 **Value Proposition**: _Understand how enterprises actually get compromised and identify realistic security gaps_
 
@@ -114,9 +114,9 @@ Establishing an enterprise environment with intentional security weaknesses that
 ---
 
 
-#### 🔴 Phase 3: Vulnerable Infrastructure
+#### 🔴 Phase 3: Adversary Emulation
 
-**Understanding attack vectors through intentional misconfigurations**
+**Emulate a real adversary and follow a specific killchain to exploit the vulnerable environment. Treat this as a real penetration test**
 
 [under construction]
 
@@ -125,13 +125,13 @@ Establishing an enterprise environment with intentional security weaknesses that
 ---
 
 
-#### 🔴 Phase 4: Attack Platform
+#### 🟣 Phase 4: Detection & Remediation
 
-**Offensive security operations and advanced attack techniques**
+**Mitigate the threat, remediate the compromised environment, and learn how to prevent future occurrences and increase response time**
 
 [under construction]
 
-**Value Proposition**: _Think like an attacker to improve defenses_
+**Value Proposition**: _Use attack methodology to build effective detection logic_
 
 ---
 

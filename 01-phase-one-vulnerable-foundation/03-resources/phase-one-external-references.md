@@ -3,7 +3,6 @@
 ## **Attack Frameworks**
 
 - MITRE ATT&CK Enterprise Matrix: https://attack.mitre.org/
-- BloodHound GitHub: https://github.com/BloodHoundAD/BloodHound
 
 ## **Detection & Monitoring**
 
