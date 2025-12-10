@@ -52,6 +52,14 @@ Phase 1 establishes an Active Directory environment mirroring real-world enterpr
 
 ## **Repository Structure**
 
+#### Deployment - Scripts used during initial setup
+
+#### Configuration - Scripts used to create the vulnerable environment
+
+#### Documentation - Validation of vulnerabilities
+
+#### Resources - External links and resources used
+
 ```
 01-phase-one-vulnerable-foundation/
 ├── readme.md [cite: 5]
