@@ -56,9 +56,9 @@ The goal of this project is to build a comprehensive cybersecurity training envi
 
 ### 🛡️ Lab Development Timeline
 
-This homelab follows a 5-phase development approach, progressing from foundational infrastructure through advanced purple team operations. Each phase builds upon the previous, demonstrating both offensive and defensive cybersecurity capabilities.
+I decided to take a structured approach. Deploy a scaled-down, simulated enterprise environment, and make it as vulnerable as possible. Deploy Splunk SIEM and ensure logs are being ingested. Then, emulate an adversary and compromise the environment in multiple ways, all while documenting the attack chain in accordance with the MITRE framework. 
 
-Each phase represents **simultaneous development** across three dimensions:
+Each phase has three components:
 
 1. **🔧 Homelab Configuration**: Technical implementation and security scenarios
 2. **📝 Content Creation**: Medium articles + GitHub repositories
@@ -72,7 +72,7 @@ Each phase represents **simultaneous development** across three dimensions:
 
 **Building a deliberately vulnerable AD domain and network infrastructure across multiple layers**
 
-Establishing an enterprise environment with intentional security weaknesses that mirror common real-world misconfigurations. Each vulnerability is deliberately introduced with documentation explaining its business justification, why it exists in real enterprises, and how it enables specific attack paths.
+Establishing an enterprise environment with intentional security weaknesses that mirror common real-world misconfigurations. 
 
 ##### Lab Components
 
