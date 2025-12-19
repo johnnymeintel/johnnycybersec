@@ -1,10 +1,10 @@
 ### My First Splunk Dashboard
 
-![Dashboard1](Dashboard1.png)
+![Dashboard1](assets/Dashboard1.png)
 
 ##### **Top Row: Quick Stats (The "Is It On?" Indicators)**
 
-![Dashboard2](Dashboard2.png)
+![Dashboard2](assets/Dashboard2.png)
 
 **Purpose:** Instant visual verification. If these are red/zero, something is broken.
 
@@ -103,7 +103,7 @@
 
 ##### **Host Validation Row (Comparing Endpoints)**
 
-![Dashboard3](Dashboard3.png)
+![Dashboard3](assets/Dashboard3.png)
 
 **Purpose:** Verifying which specific machines are sending data and identifying "quiet" hosts.
 
@@ -168,7 +168,7 @@
 
 ##### **Event Type Breakdown (Count by EventCode)**
 
-![Dashboard4](Dashboard4.png)
+![Dashboard4](assets/Dashboard4.png)
 
 **Purpose:** Understanding the _mix_ of data being collected.
 
@@ -235,7 +235,7 @@
 
 ##### **Basic Security Monitoring (Failed vs. Successful Logons)**
 
-![Dashboard5](Dashboard5.png)
+![Dashboard5](assets/Dashboard5.png)
 
 **Purpose:** A quick look at authentication activity.
 
@@ -297,7 +297,7 @@
 
 ##### **Sysmon Deep Dive (Granular Event Data)**
 
-![Dashboard6](Dashboard6.png)
+![Dashboard6](assets/Dashboard6.png)
 
 **Purpose:** validating that SwiftOnSecurity's Sysmon config is catching the details.
 
@@ -368,7 +368,7 @@
 
 ##### **File & Registry (Recent Changes)**
 
-![Dashboard7](Dashboard7.png)
+![Dashboard7](assets/Dashboard7.png)
 
 **Purpose:** Verifying file integrity monitoring.
 
@@ -432,7 +432,7 @@
 
 ##### **Active Directory Specific (DC Sanity Check)**
 
-![Dashboard8](Dashboard8.png)
+![Dashboard8](assets/Dashboard8.png)
 
 **Purpose:** Show the raw data feed from DC01/domain controller. It proves that logs are indexing _correctly_ with the right timestamp and fields.
 
@@ -463,7 +463,7 @@
 
 ##### **Bottom Rows (Errors & Raw Stream)**
 
-![Dashboard9](Dashboard9.png)
+![Dashboard9](assets/Dashboard9.png)
 
 **Purpose:** Troubleshooting the lab itself.
 
