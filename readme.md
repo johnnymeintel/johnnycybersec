@@ -70,17 +70,9 @@ Each phase has three components:
 
 #### 🔵 Phase 1: Vulnerable Foundation
 
-**Building a deliberately vulnerable AD domain and network infrastructure across multiple layers**
+**Install all the lab components and deliverately introduce known security vulnerabilities.**
 
 Establishing an enterprise environment with intentional security weaknesses that mirror common real-world misconfigurations. 
-
-##### Lab Components
-
-- Windows Server 2022 Domain Controller (DC01) with weak configurations
-- Active Directory forest with over-privileged service accounts
-- Intentionally misconfigured Group Policies enabling attack paths
-- Disabled security controls simulating "business necessity" overrides
-- Deliberately weak network segmentation
 
 ##### Tools & Technologies
 
@@ -95,10 +87,8 @@ Establishing an enterprise environment with intentional security weaknesses that
 
 - **Medium Articles**:
     - [Medium](https://medium.com/@johnnymeintel/list/vulnerable-infrastructure-251fa541c5ba)
-- **GitHub Repositories**:
+- **GitHub**:
     - [GitHub](https://github.com/johnnymeintel/johnnycybersec/tree/main/01-phase-one-vulnerable-foundation)
-
-**Value Proposition**: _Understand how enterprises actually get compromised and identify realistic security gaps_
 
 ---
 
@@ -161,12 +151,11 @@ Establishing an enterprise environment with intentional security weaknesses that
 ---
 
 
-## Let's Connect
+## Connect
 
-- **Email:** johnnymeintel@gmail.com
+- **Email:** johnny@johnnymeintel.com
 - **LinkedIn:** https://www.linkedin.com/in/johnny-meintel-3a9280269/
-- **X:** x.com/54807463
-- **Personal Website:** www.johnnymeintel.com (under construction)
+- **Personal Website:** johnnymeintel.com
 - **Blog:** www.medium.com/@johnnymeintel
 
 
